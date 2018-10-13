@@ -287,7 +287,6 @@ main(int argc, char **argv)
 
     /* Openssl 1.1.0 requires the lib-prefix for the engine_id */
     ENGINE *tpm_engine = ENGINE_by_id("tpm2tss");
-    if (!tpm_engine) tpm_engine = ENGINE_by_id("libtpm2tss");
     if (tpm_engine == NULL) {
         ERR("Could not load tpm2tss engine\n");
         return 1;
